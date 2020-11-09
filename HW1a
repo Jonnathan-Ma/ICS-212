@@ -1,0 +1,121 @@
+/*****************************************************************
+//
+//  NAME:        Jonathan Ma
+//
+//  HOMEWORK:    1a
+//
+//  CLASS:       ICS 212
+//
+//  INSTRUCTOR:  Ravi Narayan
+//
+//  DATE:        September 6, 2020
+//
+//  FILE:        homework1a.c
+//
+//  DESCRIPTION:
+//   Contains program that asks a user for a maximum Kelvin temp they want to convert to Fahrenheit.
+//
+****************************************************************/
+
+#include<stdio.h>
+
+/*****************************************************************
+//
+//  Function name: user_interface()
+//
+//  DESCRIPTION:   Takes an input from the user and also
+//                 checks to see if it meets the requirement.
+//
+//
+//  Parameters:    none, double, int
+//                            
+//
+//  Return values:  0 : meets the requirement.
+//                 -1 : Does not meet the requirement.
+//
+****************************************************************/
+
+double Kelvin;
+double Fahrenheit;
+
+int user_interface()
+{
+    printf("This program will ask the user to input a Kelvin temperature and convert it to Fahrenheit.\n\n");
+
+    do
+{
+        printf("Please enter a maximum Kelvin temperature you want to convert ===>");
+        scanf("%lf", &Kelvin);
+        printf("----------------------------------\n");
+            if (Kelvin <= 0)
+        {
+            printf("You must enter a positive integer.\n");
+            printf("------------------------------------\n");
+        }
+    }
+    while (Kelvin <= 0);
+    return Kelvin;
+}
+
+/***************************************************************
+//
+//  Function name: double convert(double Kelvin)
+//
+//  DESCRIPTION:   The convert function converts the user input 
+//                 into Fahrenheit.
+//
+//
+//  Parameters:    double
+//
+//
+//
+//  Return values:  0 : The Kelvin temp is accepted.
+//                 -1 : The Kelvin temp is not accepted.
+//
+//
+***************************************************************/
+
+double convert(double Kelvin)
+{
+    int a = 9;
+    int b = 5;
+    double c = (float)a / b;
+    Fahrenheit = c * (Kelvin - 273.15) + 32;
+    return 0;
+}
+
+/**************************************************************
+//
+//  Function name: print_table(int table)
+//
+//  
+//  DESCRIPTION:   The print_table function prints the Kelvin 
+//                 and corresponding Fahrenheit in a formatted 
+//                 table.
+//
+//
+//  Parameters:    int
+//
+//
+//
+//  Return values: none 
+//
+*************************************************************/
+
+void print_table(int table)
+{
+    float i;
+    float j;
+    printf("          K                    F\n");
+    for ( i = 0, j = -459.67; i <= Kelvin || j == convert(Kelvin); i += 50, j += 90)
+    {
+        printf("    %7.2f              %7.2f\n", i, j);
+    }
+}
+
+int main(int argc, char *argv[])
+{
+    user_interface();
+    print_table(Kelvin);
+    return 0;
+}
