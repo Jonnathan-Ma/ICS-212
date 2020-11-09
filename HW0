@@ -1,0 +1,42 @@
+/*****************************************************************
+//
+//  NAME:        Jonathan Ma
+//
+//  HOMEWORK:    0
+//
+//  CLASS:       ICS 212
+//
+//  INSTRUCTOR:  Ravi Narayan
+//
+//  DATE:        August 26, 2020
+//
+//  FILE:        homework0.c
+//
+//  DESCRIPTION:
+//   This file contains a simple code thats prints name, Hello World, and class CRN
+//
+****************************************************************/
+
+#include <stdio.h>
+
+/*****************************************************************
+//
+//  Function name: print()
+//
+//  DESCRIPTION:   This function prints a message.
+//                
+//        
+//
+//  Parameters:    print() : contains the message to be displayed when processed
+//                            
+//
+//  Return values:  0 : Successful print
+//                 -1 : Unsuccessful print
+//
+****************************************************************/
+
+int main(int argc, char *argv[])
+{
+    printf("\\Name:\tJonathan Ma\\ \n\\Hello World\\ \n\\ICS212 Program Structure\\ \n");
+    return 0;
+}
